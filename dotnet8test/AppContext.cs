@@ -9,7 +9,7 @@ namespace dotnet8test
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SchoolDB;Trusted_Connection=True;");
         }
-        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<Money> Currencies { get; set; }
         public DbSet<Product> Products { get; set; }
     }
 }

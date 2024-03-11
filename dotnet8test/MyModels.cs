@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace dotnet8test
 {
-    public class Currency(decimal value, string symbol)
+
+    // Primary constructor
+    public class Money(decimal value, string symbol)
     {
         public int Id { get; set; }
         public decimal Value { get; private set; } = value;
@@ -26,13 +28,15 @@ namespace dotnet8test
         public string Name { get; set; }
         public decimal Price { get; set; }
 
+        // EF core and SqlServer suport time types properly
         public TimeOnly TimeOfCreation { get; set; }
         public DateOnly DateOfCreation { get; set; }
         public DateTime CreationTimeStamp { get; set; }
 
-
+        //Complex types
         public Address OrginAddress { get; set; }
 
+        // Primitive collections
         public List<string> Categories { get; set; }
 
     }
@@ -43,5 +47,11 @@ namespace dotnet8test
         public string Street { get; set; } = street;
         public string City { get; set; } = city;
 
+    }
+
+    public class AddressMoney
+    {
+        public string  City { get; set; }
+        public string Symbol { get; set; }
     }
 }
